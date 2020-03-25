@@ -7,6 +7,7 @@ export const StyledTextField = styled(Form.Control)`
     border-radius:0;
     border-left: none;
     max-width: 4rem;
+    max-height: 4rem;
     background: transparent;
     padding: 0 1rem;
     margin: 0px 2px;

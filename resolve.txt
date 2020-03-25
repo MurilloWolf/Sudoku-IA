@@ -1,4 +1,4 @@
-const verify = ( lin :number,  col:number,  n:nummber) => {
+/* const verify = ( lin :number,  col:number,  n:number) => {
 
     let l, c, lr, cr;
   
@@ -36,4 +36,4 @@ const verify = ( lin :number,  col:number,  n:nummber) => {
           grade[lin][col] = t;
         }
   
-  }
+  } */

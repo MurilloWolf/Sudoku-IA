@@ -9,7 +9,7 @@ import {Action , Reducer, Store, AnyAction} from 'redux'
 
 export interface ISudokuState {
     sudoku: number[][],
-    time: number
+  
 }
 
 
@@ -20,19 +20,27 @@ const INITIAL_STATE : ISudokuState = {
              [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
              [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
              [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+             [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+             [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+             [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
             ],
-    
-    time: 12.01,
+  
 
 }
 
 
 const Sudoku: Reducer<ISudokuState | undefined ,Action> = (state = INITIAL_STATE, action:AnyAction) => {
 
+    
     switch(action.type){
         case 'CHANGE_CELL_VALUE': 
-            let sudoku  = state.sudoku;
-            sudoku[action.row][action.col] = action.cellValue
+        let sudoku  = state.sudoku;
+        sudoku[action.row][action.col] = action.cellValue
+        return 
+        
+        case 'GET_SUDOKU': 
+        
+            state.sudoku = action.sudoku;
             return 
 
         default :
