@@ -1,7 +1,7 @@
 import React from 'react';
 import {Row} from 'react-bootstrap'
 import { Styled  } from './styled'
-
+import * as SudokuAction from '../../redux/actions/sudoku'
 
 //Redux
 import {useSelector, useDispatch } from 'react-redux'
@@ -11,9 +11,13 @@ import  * as SudokuActions from '../../redux/actions/sudoku'
 
 export default function Info() {
 
-/*   const time = useSelector((state: ISudokuState) => state.time)
- */  const dispatch = useDispatch()
+   const sudoku = useSelector((state: ISudokuState) => state.sudoku)
+   const dispatch = useDispatch()
 
+  function handleSolver(){
+    dispatch(SudokuActions.solver(sudoku));
+    
+  }
 
   return (
     <Styled.Wrapper>
@@ -29,7 +33,7 @@ export default function Info() {
           <Styled.Button className="btn mt-5 m-1" difficulty={'hard'} 
               onClick ={ () => dispatch( SudokuActions.getSudoku('hard')) }>Dificil</Styled.Button>
         </Row>
-        <Styled.ButtonPrimary className=" btn w-100 mt-5">Solucionar</Styled.ButtonPrimary>
+        <Styled.ButtonPrimary className=" btn w-100 mt-5" onClick={handleSolver}>Solucionar</Styled.ButtonPrimary>
         <Styled.P className='mt-5'>Time:  </Styled.P>
     </Styled.Wrapper>
   );

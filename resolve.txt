@@ -1,39 +1,63 @@
-/* const verify = ( lin :number,  col:number,  n:number) => {
+
+
+
+
+/* const verify = ( lin :number,  col:number,  n:number, sudoku:number[][]) => {
 
     let l, c, lr, cr;
   
-    if (grade[lin][col] == n) return 1;
-    if (grade[lin][col] != 0) return 0;
+    if (sudoku[lin][col] == n) 
+      return 1;
+
+    if (sudoku[lin][col] != -1) 
+      return 0;
+
+    //percorre a coluna verificando conflito de numeros
     for (c = 0; c < 9; c++)
-      if (grade[lin][c] == n) return 0;
+      if (sudoku[lin][c] == n) 
+        return 0;
+
+  //percorre a linha verificando conflito de numeros
     for (l = 0; l < 9; l++)
-      if (grade[l][col] == n) return 0;
+      if (sudoku[l][col] == n) 
+        return 0;
+
+
     lr = lin / 3;
     cr = col / 3;
+
+  //verifica o quadrado 
     for (l = lr * 3; l < (lr + 1) * 3; l++)
       for (c = cr * 3; c < (cr + 1) * 3; c++)
-        if (grade[l][c] == n) return 0;
-        imprime();
+        if (sudoku[l][c] == n) 
+          return 0;
+     
     return 1;
   
   }
   
-  const  resolve = ( lin:number,  col:number) => {
+  const  resolve = ( lin:number,  col:number, sudoku:numver[][]) => {
   
     let n, t;
   
-    if (lin == 9)
-      imprime();
-    else
+    if (lin !== 9)
       for (n = 1; n <= 9; n++)
         if (verifica(lin, col, n)) {
-          t = grade[lin][col];
-          grade[lin][col] = n;
+          t = sudoku[lin][col];
+          sudoku[lin][col] = n;
           if (col == 8)
-            resolve(lin + 1, 0);
+            resolve(lin + 1, 0,sudoku);
           else
-            resolve(lin, col + 1);
-          grade[lin][col] = t;
+            resolve(lin, col + 1,sudoku);
+          sudoku[lin][col] = t;
         }
   
-  } */
+  }
+
+
+  const resolveSudoku = () =>{
+    let sudoku = state.sudoku;
+    resolve(0,0,sudoku)
+
+    console.log(sudoku).
+  } 

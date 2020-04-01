@@ -16,9 +16,9 @@ export default function Sudoku() {
     let rows = []
     for(let i=0; i< 9; i++){
       if(i==2 || i==5)
-        rows.push(<SudokuRow last />)
+        rows.push(<SudokuRow last line={i}/>)
       else
-        rows.push(<SudokuRow />)
+        rows.push(<SudokuRow line={i}/>)
     }
 
     return rows

@@ -23,6 +23,20 @@ export const  getSudoku =( difficulty:string ) =>{
 }
 
 
+export const verify = (row:number[], col:number[], rowCell:number,  colCell:number, cell:number) =>{
+    return {type: "VERIFY_POSITION", rowCell, colCell, col, row, cell}
+}
+
+
+export const verifyAll = (sudoku:number[][], row:number, col:number,  cell:number) =>{
+    return {type: "VERIFY_ALL", sudoku, row, col, cell}
+}
+
+export const solver = (sudoku:number[][]) =>{
+    return {type: "SOLVER", sudoku}
+}
+
+
 
 function getSudokuNumber(){
     const max = 4;
@@ -31,6 +45,7 @@ function getSudokuNumber(){
 
     return 0;
 }
+
 
 
 

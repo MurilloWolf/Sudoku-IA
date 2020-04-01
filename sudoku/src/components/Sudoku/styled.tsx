@@ -12,7 +12,7 @@ export const StyledTextField = styled(Form.Control)`
     padding: 0 1rem;
     margin: 0px 2px;
 
-   
+    font-weight: bold;
     :focus{
         background: transparent;
         transition: none;
