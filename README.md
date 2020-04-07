@@ -2,7 +2,7 @@
 Trabalho de IA do sétimo termo do curso de BCC
 
 ### Descrição:
-O trabalho utiliza backtrack para resolver o sudoku, devido a ajustes na interface não é possivel inserir dados manualment nos campos do sudoku, apenas resolver os sudokus pré-definidos.
+O trabalho utiliza backtrack para resolver o sudoku, devido a ajustes na interface não é possível inserir dados manualment nos campos do sudoku, apenas resolver os sudokus predefinidos.
 
 Caso deseje inserir algum sudoku para ser resolvido, modifique o arquivo dentro de src/data/index.tsx, pode inseri-lo dentro de qualquer categoria (easy , medium, hard), basta usar o formato de matriz [][], com os campos em branco com o valor -1;
 
@@ -27,9 +27,9 @@ Para gerar o Sudoku é feito um sorteio dos que estão cadastrados dentro de 'da
 > No final deste ReadMe tem um exemplo matriz vazia para ser preenchida pelos valores que desejar.
 
 ### Para Rodar o Projeto
-Como o projeto foi feito com ReactJs, Redux e Typescript ele precisa ter o Node instalado, e para iniciar a aplicação precisa do Yarn instalado.
+Como o projeto foi feito com ReactJs, Redux e Typescript, ele precisa ter o Node instalado, e para iniciar a aplicação precisa do Yarn instalado.
 
-*Esses comandos devem ser usados dentro do diretori do projeto (_sudoku_).
+*Esses comandos devem ser usados dentro do diretóri do projeto (_sudoku_).
 
 **Para instalar as dependencias utilize:**
 >yarn install
