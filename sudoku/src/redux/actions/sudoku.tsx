@@ -2,7 +2,7 @@ import {easy, medium , hard} from '../../data'
 
 export const  getSudoku =( difficulty:string ) =>{
 
-    const sudokuNumber:number = getSudokuNumber();
+    const sudokuNumber:number = getSudokuNumber(difficulty);
     switch(difficulty){
         case 'easy':
            return  { type:"GET_SUDOKU", sudoku:easy[sudokuNumber]};
@@ -38,12 +38,29 @@ export const solver = (sudoku:number[][]) =>{
 
 
 
-function getSudokuNumber(){
-    const max = 4;
+function getSudokuNumber(difficulty:string){
+   let max = 0 
+    switch(difficulty){
+        case 'easy':
+            max = easy.length -1; 
+       
+
+        case 'medium':
+            max = medium.length -1; 
+
+        case 'hard':
+            max = hard.length -1; 
+
+
+        default :
+             max = easy.length -1; 
+
+    }
+   
     const min = 0;
     let n = Math.round( Math.random( ) * (max - min ) + min)
 
-    return 0;
+    return n;
 }
 
 

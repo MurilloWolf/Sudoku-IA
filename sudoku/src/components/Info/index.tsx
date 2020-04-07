@@ -34,7 +34,6 @@ export default function Info() {
               onClick ={ () => dispatch( SudokuActions.getSudoku('hard')) }>Dificil</Styled.Button>
         </Row>
         <Styled.ButtonPrimary className=" btn w-100 mt-5" onClick={handleSolver}>Solucionar</Styled.ButtonPrimary>
-        <Styled.P className='mt-5'>Time:  </Styled.P>
     </Styled.Wrapper>
   );
 }
